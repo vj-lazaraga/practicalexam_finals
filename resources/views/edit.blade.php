@@ -16,7 +16,7 @@
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
-            <textarea class="form-control" name="content" id="content" required>{{ $post->body }}</textarea>
+            <input type="text" class="form-control" name="content" id="content" value=" {{ $post->content }}" required></input>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

@@ -15,7 +15,7 @@
         <input type="text" id="title" name="title" required><br>
 
         <label for="content">Content:</label>
-        <textarea id="content" name="content" required></textarea><br>
+        <input type="text" id="content" name="content" required></input><br>
 
         <button type="submit">Create Post</button>
     </form>
