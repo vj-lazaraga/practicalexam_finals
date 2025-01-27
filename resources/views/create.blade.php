@@ -8,7 +8,7 @@
 <body>
     <h1>CREATE POST</h1>
     <form action="{{ route('posts.store') }}" method="POST">
-        @method="POST"
+        @method('POST')
         @csrf
 
         <label for="title">Title:</label>

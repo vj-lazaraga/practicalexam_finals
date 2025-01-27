@@ -11,17 +11,21 @@ class PostController extends Controller
 {
     public function create()
     {
-        return view('posts.create');
+        return view('create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated= $request->validate([
             'title' => 'required',
             'content' => 'required',
-        ]);
 
-        Post::create($request->all());
+        ]);
+        Post::create([
+            'title' => $validated['title'],
+            'content'=> $validated['content'],
+            'user_id'=> Auth::id(), 
+        ]);
         return redirect()->route('index')->with('success', 'Post created successfully.');
     }
 
