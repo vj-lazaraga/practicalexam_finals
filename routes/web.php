@@ -13,12 +13,14 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('showLoginForm');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
+
 });
 
 // Post Management Routes (Requires Authentication)
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/posts', [AuthController::class, 'index'])->name('index');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     // Create new post
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');

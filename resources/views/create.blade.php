@@ -23,5 +23,6 @@
     <form action="{{ route('index') }}" method="GET">
         <button type="submit">Back to Posts</button>
     </form>
+
 </body>
 </html>

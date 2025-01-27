@@ -9,11 +9,18 @@
 <body>
     <h1>All Posts</h1>
 
+
+
     <form action= "{{route('posts.create') }}" method="GET">
         <button type= "submit">Create Post</button>
     </form>
-    <br>
 
+    <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Are you sure you want to logout')">
+        @method('POST')
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+    <br>
     @foreach ($posts as $post)
         <div><b>Title</b>: {{$post->title}}</div>
         <br>
